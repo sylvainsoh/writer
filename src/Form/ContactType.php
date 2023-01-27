@@ -20,7 +20,7 @@ class ContactType extends AbstractType
                 "label" => false,
                 "attr" => [
                     "placeholder" => "Votre nom et prénom ...",
-                    "class" => "flex-1"
+                    "class" => "form-control"
                 ],
                 "row_attr" =>[
                     "class" => "form-group flex"
@@ -31,7 +31,7 @@ class ContactType extends AbstractType
                 "label" => false,
                 "attr" => [
                     "placeholder" => "Votre email ...",
-                    "class" => "flex-1"
+                    "class" => "form-control"
                 ],
                 "row_attr" =>[
                     "class" => "form-group flex"
@@ -42,7 +42,7 @@ class ContactType extends AbstractType
                 "label" => false,
                 "attr" => [
                     "placeholder" => "Le sujet de votre message ...",
-                    "class" => "flex-1"
+                    "class" => "form-control"
                 ],
                 "row_attr" =>[
                     "class" => "form-group flex"
@@ -53,7 +53,7 @@ class ContactType extends AbstractType
                 "label" => false,
                 "attr" => [
                     "placeholder" => "Votre message ...",
-                    "class" => "flex-1",
+                    "class" => "form-control",
                     "rows" => 10
                 ],
                 "row_attr" =>[
@@ -62,9 +62,9 @@ class ContactType extends AbstractType
                 "required" => true,
             ])
             ->add('send', SubmitType::class, [
-                "label" => "Send Message",
+                "label" => "Envoyer Message",
                 "attr" =>[
-                    "class" => "btn"
+                    "class" => "btn btn-primary"
                 ]
             ])
         ;

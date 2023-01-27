@@ -4,7 +4,8 @@
     {% endif %}
     {{ form_row(form.title) }}
     {{ form_row(form.content) }}
-    <div class="flex">
+
+<div class="flex">
         <div class="image-preview">
             {% if not article.imageUrl == ""  %}
                 <img src="{{article.imageUrl}}" alt="Image de l'artilce : {{article.title}}">
@@ -21,8 +22,8 @@
     
     {{ form_row(form.categories) }}
     <div class="flex">
-        <button class="btn">{{ button_label|default('Save') }}</button>
-        <a href="{{ path('app_article_index') }}" class="btn">Cancel</a>
+        <a href="{{ path('app_article_index') }}" class="btn">Annuler</a>
+        <button class="btn btn-primary">{{ button_label|default('Poster') }}</button>
 
     </div>
 {{ form_end(form) }}

@@ -1,8 +1,10 @@
 <aside class="dashboard">
-    <ul>
-        <li><a href="{{ path("app_dashboard")}}" class="{{page == "index" ? "active": ""}}">Dashboard</a></li>
-        <li><a href="{{ path("app_index")}}" class="">Home</a></li>
-        <li><a href="{{ path("app_article_index")}}" class="{{page == "articles" ? "active": ""}}">My Articles</a></li>
-        <li><a href="{{ path("app_logout")}}">Logout</a></li>
+    <ul class="list-group">
+        <li class="list-group-item"><a href="{{ path("app_dashboard")}}" class="{{page == "index" ? "active": ""}}">Dashboard</a></li>
+        <li class="list-group-item"><a href="{{ path("app_article_index")}}" class="{{page == "articles" ? "active": ""}}">Mes Histoires</a></li>
+        <li class="list-group-item"><a href="{{ path("app_logout")}}" class="text-danger">
+                <i class="fa fa-sign-out"></i> Déconnexion
+            </a>
+        </li>
     </ul>
 </aside>

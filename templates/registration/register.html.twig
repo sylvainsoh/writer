@@ -4,30 +4,25 @@
 {% set aside = "not" %}
 
 {% block header %}
-    {{ include('header/header.html.twig', {name : "Register Form"})}}
+    {{ include('header/header.html.twig', {name : "Incscription"})}}
 {% endblock %}
 
 {% block body %}
 
-{{ form_start(registrationForm) }}
-    <p>Do you have account ? Please <a href="{{ path("app_login")}}">click here</a> to signin. </p>
-        {{ form_row(registrationForm.full_name) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        <div class="flex mb-10">
-            <div class="flex aic">
-                {{ form_label(registrationForm.agreeTerms) }}
-
-            </div>
-            <div>
-                {{ form_widget(registrationForm.agreeTerms) }}
-
-            </div>
-
+    {{ form_start(registrationForm) }}
+    <div class="row ">
+        <div class="col-lg-8 col-lg-offset-2">
+            <p class="text-center">Tu n'as pas encore de compte ? <a href="{{ path("app_login")}}">Clique ici</a> pour t'inscrire. </p>
+            {{ form_row(registrationForm.full_name) }}
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}
+<div class="text-center">
+    {{ form_label(registrationForm.agreeTerms) }}
+    {{ form_widget(registrationForm.agreeTerms) }}<br>
+    <button type="submit" class="btn btn-primary">Register</button>
+</div>
+            {{ form_end(registrationForm) }}
         </div>
+    </div>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
 {% endblock %}

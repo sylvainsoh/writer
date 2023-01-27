@@ -47,11 +47,11 @@ class ContactController extends AbstractController
             $form =  $this->createForm(ContactType::class, $contact); 
 
             
-            $session->getFlashBag()->add("message", "Message sent successfully");
+            $session->getFlashBag()->add("message", "Message envoyé avec succès");
             $session->set('status', "success");
             
         }else if($form->isSubmitted() && ! $form->isValid()){
-            $session->getFlashBag()->add("message", "Please correct the errors");
+            $session->getFlashBag()->add("message", "Corrigez les erreurs");
             $session->set('status', "danger");
 
         }

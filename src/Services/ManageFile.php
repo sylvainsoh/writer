@@ -22,7 +22,7 @@ class ManageFile extends AbstractController{
         $filename = $this->generate_name(30).".".$extension;
         $file->move($this->getParameter('image_dir'), $filename);
 
-        return '/_assets/images/articles/'.$filename;
+        return '/assets/images/articles/'.$filename;
     }
     public function updateFile($file, $old_file){
         $file_url = $this->saveFile($file);

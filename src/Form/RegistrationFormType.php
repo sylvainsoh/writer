@@ -23,8 +23,8 @@ class RegistrationFormType extends AbstractType
             ->add('full_name', TextType::class,[
                 'label' => false,
                 'attr' =>[
-                    'placeholder'=> "Your full name ...",
-                    'class' => 'flex-1'
+                    'placeholder'=> "Nom complet ...",
+                    'class' => 'form-control'
                 ],
                 "row_attr" =>[
                     "class" => "form-group flex"
@@ -33,8 +33,8 @@ class RegistrationFormType extends AbstractType
             ->add('email', EmailType::class,[
                 'label' => false,
                 'attr' =>[
-                    'placeholder'=> "Your email ...",
-                    'class' => 'flex-1'
+                    'placeholder'=> "Email ...",
+                    'class' => 'form-control'
                 ],
                 "row_attr" =>[
                     "class" => "form-group flex"
@@ -44,7 +44,7 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => "Vous devez accepter nos conditions d'utilisation",
                     ]),
                 ],
             ])
@@ -53,25 +53,25 @@ class RegistrationFormType extends AbstractType
                 // this is read and encoded in the controller
                 'mapped' => false,
                 'type' => PasswordType::class,
-                'invalid_message' => 'The password fields must match.',
+                'invalid_message' => 'Les mots de passe doivent être identiques.',
                 'options' => ['attr' => ['class' => 'password-field']],
                 'required' => true,
                 'first_options'  => [
                     'label' => false,
                     'attr'=>[
-                        'placeholder' => "Your password ...",
-                        'class' => 'flex-1'
+                        'placeholder' => "Mot de passe ...",
+                        'class' => 'form-control'
                     ],
                     "row_attr" =>[
                         "class" => "form-group flex"
                     ],
                     'constraints' => [
                         new NotBlank([
-                            'message' => 'Please enter a password',
+                            'message' => 'Saississez un mot de passe ',
                         ]),
                         new Length([
                             'min' => 6,
-                            'minMessage' => 'Your password should be at least {{ limit }} characters',
+                            'minMessage' => 'Le mot de passe dois avoir au minimum {{ limit }} caractères',
                             // max length allowed by Symfony for security reasons
                             'max' => 4096,
                         ]),
@@ -80,19 +80,19 @@ class RegistrationFormType extends AbstractType
                 'second_options' => [
                     'label' => false,
                     'attr'=>[
-                        'placeholder' => "Confirm your password ...",
-                        'class' => 'flex-1'
+                        'placeholder' => "Confirmation du mot de passe ...",
+                        'class' => 'form-control'
                     ],
                     "row_attr" =>[
                         "class" => "form-group flex"
                     ],
                     'constraints' => [
                         new NotBlank([
-                            'message' => 'Please enter a password',
+                            'message' => 'Entrez le mot de passe',
                         ]),
                         new Length([
                             'min' => 6,
-                            'minMessage' => 'Your password should be at least {{ limit }} characters',
+                            'minMessage' => 'Le mot de passe dois avoir au minimum {{ limit }} caractères',
                             // max length allowed by Symfony for security reasons
                             'max' => 4096,
                         ]),

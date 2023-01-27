@@ -18,7 +18,7 @@ $(function(){
     })
 
     $("img").on("error", function(){
-        $(this).attr("src","/_assets/images/articles/default-article-image.png")
+        $(this).attr("src","/assets/images/articles/default-article-image.png")
     })
     
    

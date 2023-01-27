@@ -22,8 +22,8 @@ class ArticleType extends AbstractType
             ->add('title', TextType::class, [
                 'label' => false,
                 'attr' =>[
-                    'placeholder' => 'Article title ...',
-                    'class' => 'flex-1'
+                    'placeholder' => 'Titre ...',
+                    'class' => 'form-control'
                 ],
                 'row_attr' =>[
                     'class' => 'form-group flex'
@@ -33,22 +33,20 @@ class ArticleType extends AbstractType
                 'label' => false,
                 'required' => true,
                 'attr' =>[
-                    'placeholder' => 'Article content ...',
-                    'class' => 'flex-1',
-                    'rows' => 15
+                    'placeholder' => 'Contenu ...',
+                    'class' => 'form-control',
+                    'rows' => 30
                 ],
                 'row_attr' =>[
-                    'class' => 'form-group flex'
+                    'class' => 'form-group'
                 ],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter article content',
+                        'message' => "Saisissez le contenu de l'article",
                     ]),
                     new Length([
                         'min' => 300,
-                        'minMessage' => 'Your content should be at least {{ limit }} characters',
-                        // max length allowed by Symfony for security reasons
-                        
+                        'minMessage' => 'Le contenu dois avoir au minimum {{ limit }} caractères'
                     ]),
                 ],
             ])
@@ -57,7 +55,7 @@ class ArticleType extends AbstractType
                 'required' =>false,
                 'attr' =>[
                     // 'placeholder' => 'Article title ...',
-                    'class' => 'flex-1'
+                    'class' => 'form-control'
                 ],
                 'row_attr' =>[
                     'class' => 'form-group flex'
@@ -71,7 +69,7 @@ class ArticleType extends AbstractType
                 'by_reference' => false,
                 'attr' =>[
                     // 'placeholder' => 'Article title ...',
-                    'class' => 'flex-1 choices_categories'
+                    'class' => 'form-control choices_categories'
                 ],
                 'row_attr' =>[
                     'class' => 'form-group flex'

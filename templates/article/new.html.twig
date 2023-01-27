@@ -1,26 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Article{% endblock %}
+{% block title %}Nouvelle histoire{% endblock %}
 {% set aside = "not" %}
 
 {% block header %}
-    {{ include('header/header.html.twig', {name :  "Create Article" })}}
+    {{ include('header/header.html.twig', {name :  "Ecrire une histoire" })}}
 {% endblock %}
 
 {% block body %}
 
-<div class="UserDashboard flex gap-20">
+<div class="col-lg-12">
     {{ include('account_dashboard/index.html.twig', {page: "articles"}) }}
     <div class="UserDashboard-container">
-        {{ include('article/_form.html.twig', {title: "Create new Article", required: "required"}) }}
-        
+        {{ include('article/_form.html.twig', {title: "Création d'un nouveau poste", required: "required"}) }}
     </div>
 </div>
 
-
- 
-
-    {% endblock %}
+{% endblock %}
     
 {% block javascripts %}
 
@@ -41,10 +37,10 @@
             })
             $("textarea").removeAttr("required")
         });
-        ClassicEditor
-                                .create( document.querySelector( '#article_content' ) )
+        ClassicEditor.create( document.querySelector( '#article_content' ) )
                                 .then( editor => {
-                                        console.log( editor );
+
+                                        console.log(  editor.config.width );
                                 } )
                                 .catch( error => {
                                         console.error( error );

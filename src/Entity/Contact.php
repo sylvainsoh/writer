@@ -18,25 +18,25 @@ class Contact
 
     #[Assert\Length(
         min: 3,
-        minMessage: 'Your full name must be at least {{ limit }} characters long'
+        minMessage: 'Le nom dois faire minimum {{ limit }} caractères de long'
     )]
     #[ORM\Column(length: 255)]
     private ?string $full_name = null;
 
-    #[Assert\Email(message: 'The email {{ value }} is not a valid email.')]
+    #[Assert\Email(message: 'Email {{ value }} erroné.')]
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
     #[Assert\Length(
         min: 10,
-        minMessage: 'Your subject must be at least {{ limit }} characters long'
+        minMessage: 'Votre objet dois faire minimum {{ limit }} caratères de long'
     )]
     #[ORM\Column(length: 255)]
     private ?string $subject = null;
     
     #[Assert\Length(
         min: 50,
-        minMessage: 'Your message must be at least {{ limit }} characters long'
+        minMessage: 'Votre méssage dois faire minimum {{ limit }} caratères de long'
     )]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $message = null;
