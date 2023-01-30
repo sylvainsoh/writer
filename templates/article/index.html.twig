@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portail{% endblock %}
+
+{% block header %}
+    {{ include('header/header.html.twig', {name :  "Dashboard" })}}
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>Bienvenue sur ton dashboard</h2>
+            <p>Tu pourras gerer tes histoires ici.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="UserDashboard flex gap-20">
+                {{ include('account_dashboard/index.html.twig', {page: "index"}) }}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+

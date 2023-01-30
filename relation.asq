@@ -1,0 +1,14 @@
+
+one User to [Many Address]
+
+one Address to [One User]
+
+----------
+One Article To [One User] 
+
+One User To [Many Article]
+
+---
+One Category To [Many Article]
+
+One Article to [Many Category]

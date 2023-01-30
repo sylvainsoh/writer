@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+{% set aside = "not" %}
+
+{% block header %}
+    {{ include('header/header.html.twig', {name : "Incscription"})}}
+{% endblock %}
+
+{% block body %}
+
+    {{ form_start(registrationForm) }}
+    <div class="row ">
+        <div class="col-lg-8 col-lg-offset-2">
+            <p class="text-center">Tu n'as pas encore de compte ? <a href="{{ path("app_login")}}">Clique ici</a> pour t'inscrire. </p>
+            {{ form_row(registrationForm.full_name) }}
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}
+<div class="text-center">
+    {{ form_label(registrationForm.agreeTerms) }}
+    {{ form_widget(registrationForm.agreeTerms) }}<br>
+    <button type="submit" class="btn btn-primary">Register</button>
+</div>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Articles de la categorie : {{ category.name }} {% endblock %}
+
+
+{% block header %}
+    {{ include('header/header.html.twig', {name :  category.name })}}
+{% endblock %}
+
+{% block body %}
+    <div class="articles-infos">
+        <p> Articles de la categorie : <strong>{{ category.name }}</strong> </p>
+        <strong>{{articles | length}}</strong> articles retrouvé(s)
+    </div>
+    <div class="articles">
+        {% for article in articles %}
+            <div class="col-sm-4 col-md-4">
+                <div class="thumbnail">
+                    <img src="{{ article.imageUrl }} " class="img-thumbnail" style="height: 200px" alt="Image de l'article  {{ article.title }}">
+                    <div class="caption">
+                        <h4>{{ article.title | slice(0, 30)}} {% if article.title|length > 30 %} ... {% endif %} </h4>
+                        <p>
+                            {%if article.author.profile.picture is defined %}
+                                <img src={{ article.author.profile.picture }}  alt="image de profile de {{article.author.fullname}}">
+                            {%else%}
+                                <img src="/assets/images/avatar_jstore.webp" class="img-circle" height="30" width="30"  alt="image de profile de {{article.author.fullname}}">
+                            {%endif%} {{ article.author.email }} |  {{ article.fromNow }}
+                        </p>
+                        <p class="text-center">
+                            <a href="/article/{{article.slug}}"  class="btn btn-primary" role="button">
+                                Lire
+                            </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="{{ asset("assets/images/logoSmallWhite.png")}}"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+                <li class="active"><a href="/">Accueil</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle pointer" data-toggle="dropdown">Catégories <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        {% for category in app.session.get("categories") %}
+                            <li class="nav-item">
+                                <a href="/category/{{category.slug}}">{{ category.name}}   ({{category.articles| length}} ) </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li><a href="/contact">Contact</a></li>
+                {% if not app.user %}
+                <li><a class="btn" href="/register">Inscription</a></li>
+                <li><a class="btn" href="/login">Connexion</a></li>
+                {% else %}
+                <li><a class="btn" href="/account">Mon Compte</a></li>
+                <li><a class="btn" href="/logout">Déconnexion</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>

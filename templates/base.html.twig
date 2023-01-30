@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site de publication d'histoires ou de blog">
+    <meta name="author"      content="Sylvain SOH">
+
+    <title>{% block title %} Bienvenue ! {% endblock %}</title>
+
+    <link rel="shortcut icon" href="{{ asset("assets/images/LogoWhite.png")}}">
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset("assets/css/bootstrap.min.css")}}">
+    <link rel="stylesheet" href="{{ asset("assets/css/font-awesome.min.css")}}">
+
+
+    <link rel="stylesheet" href="{{ asset("assets/css/bootstrap-theme.css")}}" media="screen" >
+    <link rel="stylesheet" href="{{ asset("assets/css/main.css")}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!--[if lt IE 9]>
+    <script src="{{ asset("assets/js/html5shiv.js")}}"></script>
+    <script src="{{ asset("assets/js/respond.min.js")}}"></script>
+    <![endif]-->
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+         <!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
+    {% endblock %}</head>
+
+<body class="home">
+
+<!-- Fixed navbar -->
+{% include 'parts/navBar.html.twig' %}
+<!-- /.navbar -->
+{% block header %} {% endblock %}
+
+{% block intro %} {% endblock %}
+
+{% block highlights %} {% endblock %}
+
+<!-- container -->
+<div class="container">
+    {% block body %}
+    {% endblock %}
+</div>
+<!-- /container -->
+
+
+{% include 'parts/footerAndSocialLinks.html.twig' %}
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="{{ asset("/assets/js/jquery-3.6.1.js")}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Readmore.js/2.0.2/readmore.min.js" integrity="sha512-llWtDR3k09pa9nOBfutQnrS2kIEG7M6Zm7RIjVVLNab1wRs8NUmA0OjAE38jKzKeCg+A3rdq8AVW41ZTsfhu5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/36.0.0/classic/ckeditor.js"></script>
+<script src="{{ asset("/assets/js/main.js")}}"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="{{ asset("assets/js/headroom.min.js")}}"></script>
+<script src="{{ asset("assets/js/jQuery.headroom.min.js")}}"></script>
+<script src="{{ asset("assets/js/template.js")}}"></script>
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+</body>
+</html>
